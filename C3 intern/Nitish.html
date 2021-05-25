@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>C3 Internship Work </title>
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/
+         all.min.css"/>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Font Awesome Icon Library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         .rank {
+         font-family: Arial;
+         margin: 0 auto; /* Center website */
+         max-width: 800px; /* Max width */
+         padding: 20px;
+         }
+         .heading {
+         font-size: 25px;
+         margin-right: 25px;
+         }
+         .fa {
+         font-size: 25px;
+         }
+         .checked {
+         color: orange;
+         }
+         /* Three column layout */
+         .side {
+         float: left;
+         width: 15%;
+         margin-top:10px;
+         }
+         .middle {
+         margin-top:10px;
+         float: left;
+         width: 70%;
+         }
+         /* Place text to the right */
+         .right {
+         text-align: right;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         /* The bar container */
+         .bar-container {
+         width: 100%;
+         background-color: #f1f1f1;
+         text-align: center;
+         color: white;
+         }
+         /* Individual bars */
+         .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+         .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+         .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+         .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+         .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+         /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+         @media (max-width: 400px) {
+         .side, .middle {
+         width: 100%;
+         }
+         .right {
+         display: none;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="whole">
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <div class="logo">
+            C3 Internship
+         </div>
+         <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Upcoming lessons</a></li>
+            <li><a href="#">Tasks To DO</a></li>
+            <li><a href="#">Leader Board</a></li>
+            <li><a href="#">My courses</a></li>
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+      </nav>
+      <script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const searchBtn = document.querySelector(".search-icon");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>{
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           searchBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+         searchBtn.onclick = ()=>{
+           form.classList.add("active");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+      </script>
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-4 col-md-6">
+               <div class="card">
+                  <div class="card-block">
+                     <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                           <img class="img-fluid rounded-circle" style="width:70px;" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="dashboard-user">
+                        </div>
+                        <div class="col">
+                           <h5>Prof:- Hasrsh Agarwal</h5>
+                           <span>UX Design</span>
+                        </div>
+                     </div>
+                     <ul class="task-list">
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>Basic UI design<span class="float-right text-muted">&nbsp &nbsp 25 MAY</span></h6>
+                           <p class="text-muted">Getting started with UI</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>First UI Page<span class="float-right text-muted">&nbsp &nbsp 26 MAY</span></h6>
+                           <p class="text-muted">We will Design our First UI</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>Adding CSS<span class="float-right text-muted">&nbsp &nbsp 27 MAY</span></h6>
+                           <p class="text-muted">We will Learn to add Css</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+               <div class="card">
+                  <div class="card-block">
+                     <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                           <img class="img-fluid rounded-circle" style="width:70px;" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="dashboard-user">
+                        </div>
+                        <div class="col">
+                           <h5>Prof Nitish</h5>
+                           <span>UX Designer</span>
+                        </div>
+                     </div>
+                     <ul class="task-list">
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Design Introduction<span class="float-right text-muted">&nbsp 27 MAY</span></h6>
+                           <p class="text-muted">Welcome to UX design classes</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>Fundamentals of UX<span class="float-right text-muted">&nbsp &nbsp28 MAY</span></h6>
+                           <p class="text-muted">Getting started with the fundamentals of UX…</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Deploy <span class="float-right text-muted">&nbsp &nbsp29 MAY</span></h6>
+                           <p class="text-muted">Learinig to deploy UX…</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xl-4 col-md-6">
+               <div class="card">
+                  <div class="card-block">
+                     <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                           <img class="img-fluid rounded-circle" style="width:70px;" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dashboard-user">
+                        </div>
+                        <div class="col">
+                           <h5>Prof Chandhini Jain</h5>
+                           <span>UX Designer</span>
+                        </div>
+                     </div>
+                     <ul class="task-list">
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Design Introduction<span class="float-right text-muted">&nbsp 27 MAY</span></h6>
+                           <p class="text-muted">Welcome to UX design classes</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>Fundamentals of UX<span class="float-right text-muted">&nbsp &nbsp28 MAY</span></h6>
+                           <p class="text-muted">Getting started with the fundamentals of UX…</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Deploy <span class="float-right text-muted">&nbsp &nbsp29 MAY</span></h6>
+                           <p class="text-muted">Learinig to deploy UX…</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+               <div class="card">
+                  <div class="card-block">
+                     <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                           <img class="img-fluid rounded-circle" style="width:70px;" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="dashboard-user">
+                        </div>
+                        <div class="col">
+                           <h5>Prof Preetham Agarwal</h5>
+                           <span>UX Designer</span>
+                        </div>
+                     </div>
+                     <ul class="task-list">
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Design Introduction<span class="float-right text-muted">&nbsp 27 MAY</span></h6>
+                           <p class="text-muted">Welcome to UX design classes</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>Fundamentals of UX<span class="float-right text-muted">&nbsp &nbsp28 MAY</span></h6>
+                           <p class="text-muted">Getting started with the fundamentals of UX…</p>
+                        </li>
+                        <li>
+                           <i class="task-icon bg-c-green"></i>
+                           <h6>UX Deploy <span class="float-right text-muted">&nbsp &nbsp29 MAY</span></h6>
+                           <p class="text-muted">Learinig to deploy UX…</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="card card-white">
+                  <div class="card-body">
+                     <h3>Manage your Todo's of the Day: </h3>
+                     <form action="javascript:void(0);">
+                        <input type="text" class="form-control add-task" placeholder="New Task...">
+                     </form>
+                     <ul class="nav nav-pills todo-nav">
+                        <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
+                        <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
+                        <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
+                     </ul>
+                     <div class="todo-list">
+                        <div class="todo-item">
+                           <div class="checker"><span class=""><input type="checkbox"></span></div>
+                           <span>Create theme</span>
+                           <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                        </div>
+                        <div class="todo-item">
+                           <div class="checker"><span class=""><input type="checkbox"></span></div>
+                           <span>Work on wordpress</span>
+                           <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                        </div>
+                        <div class="todo-item">
+                           <div class="checker"><span class=""><input type="checkbox"></span></div>
+                           <span>Organize office main department</span>
+                           <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                        </div>
+                        <div class="todo-item">
+                           <div class="checker"><span><input type="checkbox"></span></div>
+                           <span>Error solve in HTML template</span>
+                           <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="mowaa">
+         <div id="piechart"></div>
+         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            // Draw the chart and set the chart values
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Work', 8],
+              ['Eat', 2],
+              ['TV', 4],
+              ['Gym', 2],
+              ['Sleep', 8]
+            ]);
+            
+              // Optional; add a title and set the width and height of the chart
+              var options = {'title':'My Average Day', 'width':550, 'height':400};
+            
+              // Display the chart inside the <div> element with id="piechart"
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              chart.draw(data, options);
+            }
+         </script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+         <canvas id="myChart" style="width:80%;max-width:500px"></canvas>
+         <script>
+            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+            
+            new Chart("myChart", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  fill: false,
+                  lineTension: 0,
+                  backgroundColor: "rgba(0,0,255,1.0)",
+                  borderColor: "rgba(0,0,255,0.1)",
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                scales: {
+                  yAxes: [{ticks: {min: 6, max:16}}],
+                }
+              }
+            });
+         </script>
+      </div>
+      <div class="rank">
+         <span class="heading">Subject-wise Marks</span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star"></span>
+         <p>4.1 average based on 4 subjects.</p>
+         <hr style="border:3px solid #f1f1f1">
+         <div class="row">
+            <div class="side">
+               <div>UI Design</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-5"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>75/100</div>
+            </div>
+            <div class="side">
+               <div>UX Design Part-1</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-4"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>63/100</div>
+            </div>
+            <div class="side">
+               <div>UX Design part-2</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-3"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>50/100</div>
+            </div>
+            <div class="side">
+               <div>Structure</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-2"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>40/100</div>
+            </div>
+            <div class="side">
+               <div>Overall</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-1"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>35/100</div>
+            </div>
+         </div>
+      </div>
+      <div class="rank">
+         <span class="heading">Home Work Progress</span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star"></span>
+         <p>4.1 average based on 4 subjects.</p>
+         <hr style="border:3px solid #f1f1f1">
+         <div class="row">
+            <div class="side">
+               <div>UI Design</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-5"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>75% work done</div>
+            </div>
+            <div class="side">
+               <div>UX Design Part-1</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-4"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>63% work done</div>
+            </div>
+            <div class="side">
+               <div>UX Design part-2</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-3"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>50% work done</div>
+            </div>
+            <div class="side">
+               <div>Structure</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-2"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>40% work done</div>
+            </div>
+            <div class="side">
+               <div>Overall</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-1"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>35% work done</div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <body class="d-flex flex-column">
+      <!-- Footer -->
+      <footer class="bg-white">
+         <div class="container py-5">
+            <div class="row py-4">
+               <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                  <img src="img/logo.png" alt="" width="180" class="mb-3">
+                  <p class="font-italic text-muted">Indian Institute of Technology Hyderabad is a public technical and research university located in Sangareddy district, Telangana, India. IITH was founded in 2008, </p>
+                  <ul class="list-inline mt-4">
+                     <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                     <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                     <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                     <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                     <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Contact Details</h6>
+                  <ul class="list-unstyled mb-0">
+                     <li class="mb-2"><a href="#" class="text-muted">Office admin</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Cheif</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Superindentent</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Common</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Faculty</h6>
+                  <ul class="list-unstyled mb-0">
+                     <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                     <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-4 col-md-6 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                  <p class="text-muted mb-4">Indian Institute of Technology Hyderabad is a public technical and research university located in Sangareddy district, Telangana, India. IITH was founded in 2008</p>
+                  <div class="p-1 rounded border">
+                     <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                        <div class="input-group-append">
+                           <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Copyrights -->
+         <div class="bg-light py-4">
+            <div class="container text-center">
+               <p class="text-muted mb-0 py-2">© IIT Hyderbad All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+      <!-- End -->
+   </body>
+</html>
